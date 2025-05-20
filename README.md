@@ -19,6 +19,7 @@ timemost1 = Order_Details['Hour'].value_counts().index.tolist()[:24]
 timemost2 = Order_Details['Hour'].value_counts().values.tolist()[:24]
 timemost = Order_Details['Hour'].value_counts()
 timemost1 = []
+# not working
 
 for i in range(0,23):
     timemost1.append(i)
