@@ -4,22 +4,18 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-Order_Details = pd.read_csv('Order_details(masked).csv')
-# here we have taken Transaction
-# date column
+
 Order_Details['Time'] = pd.to_datetime(Order_Details['Transaction Date'])
 
-# After that we extracted hour 
-# from Transaction date column
+
 Order_Details['Hour'] = (Order_Details['Time']).dt.hour
-# n =24 in this case, can be modified
-# as per need to see top 'n' busiest hours
+
 timemost1 = Order_Details['Hour'].value_counts().index.tolist()[:24] 
 
 timemost2 = Order_Details['Hour'].value_counts().values.tolist()[:24]
 timemost = Order_Details['Hour'].value_counts()
 timemost1 = []
-# not working
+
 
 for i in range(0,23):
     timemost1.append(i)
